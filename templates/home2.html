@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HOME</title>
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: rgb(221, 215, 215);
+        }
+
+        header::before{
+            background: url('https://images.pexels.com/photos/3820059/pexels-photo-3820059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
+            content: "";
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .navigation {
+            font-family: 'Bree Serif', serif;
+            font-size: 20px;
+            display: flex;
+        }
+
+        li {
+            list-style: none;
+            padding: 20px 23px;
+        }
+
+        section {
+            height: 344px;
+            font-family: 'Bree Serif', serif;
+            margin: 3px 230px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 4rem;
+        }
+
+        p {
+            text-align: center;
+        }
+
+     
+
+        .navbar{
+            /* background-color: black; */
+            border-radius: 30px;
+            
+        }
+        .navbar ul{
+            overflow: auto;
+        }
+        .navbar li{
+            float:left;
+            list-style: none; 
+            margin: 13px 20px;
+            
+        }
+        .navbar li a{
+            padding: 3px 3px;
+            text-decoration: none;
+            color: white;
+        }
+        .navbar li a:hover{
+            color: rgb(255, 0, 225)
+        }
+        .search{
+            float: right;
+            color: white;
+            padding: 12px 75px;
+        }
+        .navbar input{
+            border: 2px solid black;
+            border-radius: 14px;
+            padding: 3px 17px;
+            width: 129px;
+        }
+
+        
+        .info{
+            font-size: larger;
+        }
+
+
+        /* section::after{
+        content:"this is a content"
+    } */
+
+    </style>
+</head>
+
+<body>
+    
+    <header>
+       
+        <nav class="navbar">
+            <ul>
+                <li><a href="{{ url_for('index')}}">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="{{ url_for('signup')}}">SIGNUP</a></li>
+                <li><a href="{{ url_for('login')}}">LOGIN</a></li>
+            
+                <div class="search">
+                    <input type="text" name="search" id="search" placeholder="Search">
+                </div>
+            </ul>
+        </nav>
+    </header>
+    
+    {% block head %}
+        <section>
+            <h1> Autism In Toddlers </h1>
+            <h3><p>Autism, a neurodevelopmental disorder, can manifest in toddlers as early as age 2. 
+                It's characterized by challenges in social interaction, communication, and repetitive behaviors. 
+                Toddlers with autism may struggle with making eye contact, engaging in reciprocal play, and demonstrating 
+                limited speech or difficulty expressing their needs. They often exhibit strong preferences for routine and 
+                may become upset by changes. Early detection and intervention are crucial for better outcomes, as therapies
+                and support can help toddlers with autism develop essential social and communication skills, improving their
+                 overall quality of life and future prospects. Parents should consult with healthcare professionals if they 
+                 have concerns.</p>
+            </h3>
+
+        </section>
+    {% endblock %}
+    </body>
+
+</html>
